@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>student marks</title>
+    <style>
+        h1 {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body bgcolor="cyan">
+    <script type="text/javascript">
+        function show() {
+            var grd;
+            var name = form1.t1.value;
+            var s = form2.t2.value;
+            var e = form3.t3.value;
+            var i = form4.t4.value;
+            var p = form5.t5.value;
+            var c = form6.t6.value;
+            var b = form7.t7.value;
+            var p12 = form8.t8.value;
+            var c12 = form9.t9.value;
+            var b12 = form10.t10.value;
+            var pe = form11.t11.value;
+            var ce = form12.t12.value;
+            var be = form13.t13.value;
+            var me = form14.t14.value;
+            var ee = form15.t15.value;
+            var ie = form16.t16.value;
+            var m = form20.t20.value;
+            var en = form21.t21.value;
+            var it = form22.t22.value;
+            var m12 = form23.t23.value;
+            var en12 = form24.t24.value;
+            var it12 = form25.t25.value;
+            var physics = (e * 21 / 300) + (i * 21 / 300) + (s * 21 / 300) + (p * 21 / 100) + (p12 * 28 / 70) + (pe * 1 / 1);
+            var chemistry = (e * 21 / 300) + (i * 21 / 300) + (s * 21 / 300) + (c * 21 / 100) + (c12 * 28 / 70) + (ce * 1 / 1);
+            var biology = (e * 21 / 300) + (i * 21 / 300) + (s * 21 / 300) + (b * 21 / 100) + (b12 * 28 / 70) + (be * 1 / 1);
+            var math = (e * 24 / 300) + (i * 24 / 300) + (s * 24 / 300) + (m * 24 / 100) + (m12 * 32 / 80) + (me * 1 / 1);
+            var english = (e * 24 / 300) + (i * 24 / 300) + (s * 24 / 300) + (en * 24 / 100) + (en12 * 32 / 80) + (ee * 1 / 1);
+            var info = (e * 24 / 300) + (i * 24 / 300) + (s * 24 / 300) + (it * 24 / 100) + (it12 * 32 / 80) + (ie * 1 / 1);
+            var total = (physics) + (chemistry) + (biology) + (math) + (english) + (info);
+            var percentage = (e * 21 / 600) + (i * 21 / 600) + (s * 21 / 600) + (e * 24 / 600) + (i * 24 / 600) + (s * 24 / 600) + (p * 21 / 600) + (c * 21 / 600) + (b * 21 / 600) + (m * 24 / 600) + (en * 24 / 600) + (it * 24 / 600) + (p12 * 28 / 420) + (c12 * 28 / 420) + (b12 * 28 / 420) + (m12 * 32 / 480) + (en12 * 32 / 480) + (it12 * 32 / 480) + (pe / 6) + (ce / 6) + (be / 6) + (me / 6) + (ee / 6) + (ie / 6);
+            if (percentage >= 80) { grd = "A"; }
+            else
+                if (percentage >= 65) { grd = "B"; }
+                else
+                    if (percentage >= 50) { grd = "C"; }
+                    else
+                        if (percentage >= 35) { grd = "A"; }
+                        else
+                            if (percentage <= 35) { grd = "fail"; }
+
+            {
+                if
+                    (percentage >= 35)
+                    alert("Congratulations! you are passed");
+                else
+                    alert("you are failed");
+            }
+            {
+                document.write("<h1>Marksheet created by Narayan Ghanwat</h1><table border=2 bgcolor=cyan><tr><th bgcolor=cyan><h1>Name    </h1> </th> <th><h1>Average percentage</h1></th><th><h1>Grade</h1></th></tr><tr><td>"
+                    + name + "</td><td>" + percentage + "</td><td>" + grd + "</td></table><h1>Result details</h1><table border=7 bgcolor=cyan><tr><th bgcolor=cyan><h1>Subjects </h1> </th> <th><h1>Average marks</h1></th></tr><tr><td>Physics</td><td>" + physics + "</td><tr><td>Chemistry</td><td>" + chemistry + "</td><tr><td>Biology</td><td>" + biology + "</td><tr><td>Maths</td><td>" + math + "</td><tr><td>English</td><td>" + english + "</td><tr><td>Marathi/IT</td><td>" + info + "</td><tr><td>Total</td><td>" + total + "</td></table>");
+            }
+        }
+    </script>
+    <h1 align="center">Marksheet for HSC 2021 on the basis of 30-30-40 critaria</h1><br>
+    <table border="7">
+        <form name="form1">
+            <tr>
+                <td>
+                    ENTER Your Name</td>
+                <td>
+                    <input type="Text" name="t1">
+                </td>
+        </form>
+        </tr>
+        <tr>
+            <form name="form2">
+                <td>
+                    ENTER 10th 1st highest marks out of 100</td>
+                <td>
+                    <input type="number" name="t2">
+                </td>
+            </form>
+        </tr>
+        <form name="form3">
+            <tr>
+                <td>
+                    ENTER 10th 2nd highest marks out of 100</td>
+                <td>
+                    <input type="number" name="t3">
+                </td>
+        </form>
+        </tr>
+        <tr>
+            <form name="form4">
+                <td>ENTER 10th 3rd highest marks out of 100 </td>
+                <td>
+                    <input type="number" name="t4">
+                </td>
+            </form>
+        </tr>
+    </table>
+    <table border="7">
+        <tr>
+            <th colspan="2">
+                <h1>class 11th details </h1>
+            </th>
+        </tr>
+        <tr>
+            <form name="form5">
+                <td>
+                    Enter 11th PHYSICS marks out of 100</td>
+                <td>
+                    <input type="number" name="t5">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form6">
+                <td>
+                    Enter 11th CHEMISTERY marks out of 100</td>
+                <td>
+                    <input type="number" name="t6">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form7">
+                <td>
+                    Enter 11th BIOLOGY marks out of 100</td>
+                <td>
+                    <input type="number" name="t7">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form20">
+                <td>
+                    Enter 11th MATHS/geography marks out of 100</td>
+                <td>
+                    <input type="number" name="t20">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form21">
+                <td>
+                    Enter 11th ENGLISH marks out of 100</td>
+                <td>
+                    <input type="number" name="t21">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form22">
+                <td>
+                    Enter 11th Marathi/iT marks out of 100</td>
+                <td>
+                    <input type="number" name="t22">
+                </td>
+            </form>
+        </tr>
+    </table>
+    <table border="7">
+        <tr>
+            <th colspan="2">
+                <h1>class 12th details</h1>
+            </th>
+        </tr>
+        <tr>
+            <form name="form8">
+                <td>Enter 12th Physics marks out of 70</td>
+                <td>
+                    <input type="number" name="t8">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form9">
+                <td>Enter 12th Chemistry marks out of 70</td>
+                <td>
+                    <input type="number" name="t9">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form10">
+                <td>Enter 12th Biology marks out of 70</td>
+                <td>
+                    <input type="number" name="t10">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form23">
+                <td>
+                    Enter 12th MATHS/geography marks out of 80</td>
+                <td>
+                    <input type="number" name="t23">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form24">
+                <td>
+                    Enter 12th ENGLISH marks out of 80</td>
+                <td>
+                    <input type="number" name="t24">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form25">
+                <td>
+                    Enter 12th Marathi/iT marks out of 80</td>
+                <td>
+                    <input type="number" name="t25">
+                </td>
+            </form>
+        </tr>
+    </table>
+    <table border="7">
+        <tr>
+            <th colspan="2">
+                <h1>internal/practical/assignments marks</h1>
+            </th>
+        </tr>
+        <tr>
+            <form name="form11">
+                <td>Enter 12th Physics teacher's (internal)marks out of 30</td>
+                <td>
+                    <input type="number" name="t11">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form12">
+                <td>Enter 12th Chemistry teacher's (internal)marks out of 30</td>
+                <td>
+                    <input type="number" name="t12">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form13">
+                <td>Enter 12th Biology teacher's(internal) marks out of 30</td>
+                <td>
+                    <input type="number" name="t13">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form14">
+                <td>Enter 12th Math/Geography teacher's(internal) marks out of 20</td>
+                <td>
+                    <input type="number" name="t14">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form15">
+                <td>Enter 12th English teacher's(internal) marks out of 20</td>
+                <td>
+                    <input type="number" name="t15">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <form name="form16">
+                <td>Enter 12th Marathi/IT teacher's(internal) marks out of 20</td>
+                <td>
+                    <input type="number" name="t16">
+                </td>
+            </form>
+        </tr>
+    </table>
+    <input type="submit" value="submit" onclick="show()"> 
+    <input type="reset">
+    </form>

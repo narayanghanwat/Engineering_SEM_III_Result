@@ -1,283 +1,180 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>student marks</title>
-    <style>
-        h1 {
-            color: pink;
+  <head>
+    <title>SGPA Calculator SEM III</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+    <script language="javascript">
+      var egp = 0;
+      var sgpa = 0.00;
+      function check(x) {
+        var grd = " ";
+        if (x > 85) grd = "A+";
+        else if (x > 75) grd = "A";
+        else if (x > 67) grd = "B+";
+        else if (x > 60) grd = "B";
+        else if (x > 50) grd = "C+";
+        else if (x >= 40) grd = "C";
+        else grd = "fail";
+        return grd;
+      }
+      function grdpt(x)
+      {
+        if (x == "A+")return 1;
+        else if (x == "A")return 2;
+        else if (x == "B+")return 3;
+        else if (x == "B")return 4;
+        else if (x == "C+")return 5;
+        else if (x == "C")return 6;
+      }
+      function calculate(x,cp)
+      {
+       var t = grdpt(check(x))-1;
+       cp = cp-t*cp/10;
+       egp += cp;
+      }
+      function show() {
+        var name = f1.t1.value;
+        var roll = f1.r1.value;
+        var v = f1.t2.value;
+        var p1 = calculate(v,20);
+        var m3 = f1.t3.value;
+        var p2 =calculate(m3,40);
+        var ds = f1.t4.value;
+        var p3 =calculate(ds,40);
+        var coa = f1.t5.value;
+        var p4 =calculate(coa,30);
+        var dsa = f1.t6.value;
+        var p5 =calculate(dsa,30);
+        var dsl = f1.t7.value;
+        var p6 =calculate(dsl,10);
+        var dsal = f1.t8.value;
+        dsal = (dsal * 100) / 150;
+        var p7 =calculate(dsal,20);
+        var ind = f1.t9.value;
+        ind = ind * 2;
+        var p8 =calculate(ind,10);
+        if (
+          v >= 40 &&
+          m3 >= 40 &&
+          ds >= 40 &&
+          coa >= 40 &&
+          dsa >= 40 &&
+          dsl >= 40 &&
+          dsal >= 40 &&
+          ind >= 40
+        ) {
+          alert("Congratulations! you are passed");
+        } else {
+          alert("you are failed !! Better Luck Next Time");
         }
-    </style>
-</head>
-
-<body bgcolor="cyan">
-    <script type="text/javascript">
-        function show() {
-            var grd;
-            var name = form1.t1.value;
-            var s = form2.t2.value;
-            var e = form3.t3.value;
-            var i = form4.t4.value;
-            var p = form5.t5.value;
-            var c = form6.t6.value;
-            var b = form7.t7.value;
-            var p12 = form8.t8.value;
-            var c12 = form9.t9.value;
-            var b12 = form10.t10.value;
-            var pe = form11.t11.value;
-            var ce = form12.t12.value;
-            var be = form13.t13.value;
-            var me = form14.t14.value;
-            var ee = form15.t15.value;
-            var ie = form16.t16.value;
-            var m = form20.t20.value;
-            var en = form21.t21.value;
-            var it = form22.t22.value;
-            var m12 = form23.t23.value;
-            var en12 = form24.t24.value;
-            var it12 = form25.t25.value;
-            var physics = (e * 21 / 300) + (i * 21 / 300) + (s * 21 / 300) + (p * 21 / 100) + (p12 * 28 / 70) + (pe * 1 / 1);
-            var chemistry = (e * 21 / 300) + (i * 21 / 300) + (s * 21 / 300) + (c * 21 / 100) + (c12 * 28 / 70) + (ce * 1 / 1);
-            var biology = (e * 21 / 300) + (i * 21 / 300) + (s * 21 / 300) + (b * 21 / 100) + (b12 * 28 / 70) + (be * 1 / 1);
-            var math = (e * 24 / 300) + (i * 24 / 300) + (s * 24 / 300) + (m * 24 / 100) + (m12 * 32 / 80) + (me * 1 / 1);
-            var english = (e * 24 / 300) + (i * 24 / 300) + (s * 24 / 300) + (en * 24 / 100) + (en12 * 32 / 80) + (ee * 1 / 1);
-            var info = (e * 24 / 300) + (i * 24 / 300) + (s * 24 / 300) + (it * 24 / 100) + (it12 * 32 / 80) + (ie * 1 / 1);
-            var total = (physics) + (chemistry) + (biology) + (math) + (english) + (info);
-            var percentage = (e * 21 / 600) + (i * 21 / 600) + (s * 21 / 600) + (e * 24 / 600) + (i * 24 / 600) + (s * 24 / 600) + (p * 21 / 600) + (c * 21 / 600) + (b * 21 / 600) + (m * 24 / 600) + (en * 24 / 600) + (it * 24 / 600) + (p12 * 28 / 420) + (c12 * 28 / 420) + (b12 * 28 / 420) + (m12 * 32 / 480) + (en12 * 32 / 480) + (it12 * 32 / 480) + (pe / 6) + (ce / 6) + (be / 6) + (me / 6) + (ee / 6) + (ie / 6);
-            if (percentage >= 80) { grd = "A"; }
-            else
-                if (percentage >= 65) { grd = "B"; }
-                else
-                    if (percentage >= 50) { grd = "C"; }
-                    else
-                        if (percentage >= 35) { grd = "A"; }
-                        else
-                            if (percentage <= 35) { grd = "fail"; }
-
-            {
-                if
-                    (percentage >= 35)
-                    alert("Congratulations! you are passed");
-                else
-                    alert("you are failed");
-            }
-            {
-                document.write("<h1>Marksheet created by Narayan Ghanwat</h1><table border=2 bgcolor=cyan><tr><th bgcolor=cyan><h1>Name    </h1> </th> <th><h1>Average percentage</h1></th><th><h1>Grade</h1></th></tr><tr><td>"
-                    + name + "</td><td>" + percentage + "</td><td>" + grd + "</td></table><h1>Result details</h1><table border=7 bgcolor=cyan><tr><th bgcolor=cyan><h1>Subjects </h1> </th> <th><h1>Average marks</h1></th></tr><tr><td>Physics</td><td>" + physics + "</td><tr><td>Chemistry</td><td>" + chemistry + "</td><tr><td>Biology</td><td>" + biology + "</td><tr><td>Maths</td><td>" + math + "</td><tr><td>English</td><td>" + english + "</td><tr><td>Marathi/IT</td><td>" + info + "</td><tr><td>Total</td><td>" + total + "</td></table>");
-            }
-        }
+        sgpa = egp/20;
+        document.write(
+          "<h1>SGPA Calculator by Narayan Ghanwat</h1><table border=2 bgcolor=cyan><tr><th bgcolor=cyan><h1>Name    </h1> </th> <th><h1>Roll Number</h1></th><th><h1>Average SGPA</h1></th><th><h1>Expected SGP</h1></th></tr><tr><td>" +
+            name +
+            "</td><td>" +
+            roll +
+            "</td><td>" +
+            sgpa +
+            "</td><td>" +
+            egp +
+            "</td></table><h1>Result details</h1><table border=7 bgcolor=cyan><tr><th bgcolor=cyan><h1>Subjects </h1> </th> <th><h1>Grades</h1></th></tr><tr><td>Values and Ethics</td><td>" +
+            check(v) +
+            "</td><tr><td>Mathematics III</td><td>" +
+            check(m3) +
+            "</td><tr><td>Digital Systems</td><td>" +
+            check(ds) +
+            "</td><tr><td>COA</td><td>" +
+            check(coa) +
+            "</td><tr><td>DSA</td><td>" +
+            check(dsa) +
+            "</td><tr><td>Digital Systems Lab</td><td>" +
+            check(dsl) +
+            "</td><tr><td>DSA LAB</td><td>" +
+            check(dsal) +
+            "</td><tr><td>Industrial Training</td><td>" +
+            check(ind) +
+            "</td></tr></table>"
+        );
+      }
     </script>
-    <h1 align="center">Marksheet for HSC 2021 on the basis of 30-30-40 critaria</h1><br>
-    <table border="7">
-        <form name="form1">
-            <tr>
-                <td>
-                    ENTER Your Name</td>
-                <td>
-                    <input type="Text" name="t1">
-                </td>
-        </form>
+  </head>
+  <body bgcolor="cyan">
+    <h1>SGPA Calculator SEM III</h1>
+    <form name="f1">
+      <table>
+        <tr>
+          <td>Enter Your Name</td>
+          <td>
+            <input type="Text" name="t1" placeholder="Enter Your Name here" required/>
+          </td>
+          <td>Roll Number</td>
+          <td>
+            <input type="Text" name="r1" placeholder="Enter  Roll Number" required/>
+          </td>
         </tr>
         <tr>
-            <form name="form2">
-                <td>
-                    ENTER 10th 1st highest marks out of 100</td>
-                <td>
-                    <input type="number" name="t2">
-                </td>
-            </form>
-        </tr>
-        <form name="form3">
-            <tr>
-                <td>
-                    ENTER 10th 2nd highest marks out of 100</td>
-                <td>
-                    <input type="number" name="t3">
-                </td>
-        </form>
+          <td>Course Code</td>
+          <td>Course Title</td>
+          <td>Obtained Marks</td>
+          <td>Total Marks</td>
         </tr>
         <tr>
-            <form name="form4">
-                <td>ENTER 10th 3rd highest marks out of 100 </td>
-                <td>
-                    <input type="number" name="t4">
-                </td>
-            </form>
-        </tr>
-    </table>
-    <table border="7">
-        <tr>
-            <th colspan="2">
-                <h1>class 11th details </h1>
-            </th>
+          <td>IT2301</td>
+          <td>Values And Ethics</td>
+          <td><input type="number" name="t2" required/></td>
+          <td>Total marks 100</td>
         </tr>
         <tr>
-            <form name="form5">
-                <td>
-                    Enter 11th PHYSICS marks out of 100</td>
-                <td>
-                    <input type="number" name="t5">
-                </td>
-            </form>
+          <td>IT2302</td>
+          <td>Mathematics III</td>
+          <td><input type="number" name="t3" required/></td>
+
+          <td>Total marks 100</td>
         </tr>
         <tr>
-            <form name="form6">
-                <td>
-                    Enter 11th CHEMISTERY marks out of 100</td>
-                <td>
-                    <input type="number" name="t6">
-                </td>
-            </form>
+          <td>IT2303</td>
+          <td>Digital Systems</td>
+          <td><input type="number" name="t4" required /></td>
+          <td>Total marks 100</td>
         </tr>
         <tr>
-            <form name="form7">
-                <td>
-                    Enter 11th BIOLOGY marks out of 100</td>
-                <td>
-                    <input type="number" name="t7">
-                </td>
-            </form>
+          <td>IT2304</td>
+          <td>CAO</td>
+          <td><input type="number" name="t5" required/></td>
+          <td>Total marks 100</td>
         </tr>
         <tr>
-            <form name="form20">
-                <td>
-                    Enter 11th MATHS/geography marks out of 100</td>
-                <td>
-                    <input type="number" name="t20">
-                </td>
-            </form>
+          <td>IT2305</td>
+          <td>DSA</td>
+          <td><input type="number" name="t6" required/></td>
+          <td>Total marks 100</td>
         </tr>
         <tr>
-            <form name="form21">
-                <td>
-                    Enter 11th ENGLISH marks out of 100</td>
-                <td>
-                    <input type="number" name="t21">
-                </td>
-            </form>
+          <td>IT2306</td>
+          <td>Digital Systems Lab</td>
+          <td><input type="number" name="t7" required/></td>
+          <td>Total marks 100</td>
         </tr>
         <tr>
-            <form name="form22">
-                <td>
-                    Enter 11th Marathi/iT marks out of 100</td>
-                <td>
-                    <input type="number" name="t22">
-                </td>
-            </form>
-        </tr>
-    </table>
-    <table border="7">
-        <tr>
-            <th colspan="2">
-                <h1>class 12th details</h1>
-            </th>
+          <td>IT2307</td>
+          <td>DSA Lab</td>
+          <td><input type="number" name="t8" required/></td>
+          <td>Total marks 150</td>
         </tr>
         <tr>
-            <form name="form8">
-                <td>Enter 12th Physics marks out of 70</td>
-                <td>
-                    <input type="number" name="t8">
-                </td>
-            </form>
+          <td>IT2308</td>
+          <td>Industrial Training</td>
+          <td><input type="number" name="t9" required/></td>
+          <td>Total marks 50</td>
         </tr>
         <tr>
-            <form name="form9">
-                <td>Enter 12th Chemistry marks out of 70</td>
-                <td>
-                    <input type="number" name="t9">
-                </td>
-            </form>
+          <td>
+            <input type="submit" value="submit" onclick="show()" />
+            <input type="reset" />
+          </td>
         </tr>
-        <tr>
-            <form name="form10">
-                <td>Enter 12th Biology marks out of 70</td>
-                <td>
-                    <input type="number" name="t10">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form23">
-                <td>
-                    Enter 12th MATHS/geography marks out of 80</td>
-                <td>
-                    <input type="number" name="t23">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form24">
-                <td>
-                    Enter 12th ENGLISH marks out of 80</td>
-                <td>
-                    <input type="number" name="t24">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form25">
-                <td>
-                    Enter 12th Marathi/iT marks out of 80</td>
-                <td>
-                    <input type="number" name="t25">
-                </td>
-            </form>
-        </tr>
-    </table>
-    <table border="7">
-        <tr>
-            <th colspan="2">
-                <h1>internal/practical/assignments marks</h1>
-            </th>
-        </tr>
-        <tr>
-            <form name="form11">
-                <td>Enter 12th Physics teacher's (internal)marks out of 30</td>
-                <td>
-                    <input type="number" name="t11">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form12">
-                <td>Enter 12th Chemistry teacher's (internal)marks out of 30</td>
-                <td>
-                    <input type="number" name="t12">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form13">
-                <td>Enter 12th Biology teacher's(internal) marks out of 30</td>
-                <td>
-                    <input type="number" name="t13">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form14">
-                <td>Enter 12th Math/Geography teacher's(internal) marks out of 20</td>
-                <td>
-                    <input type="number" name="t14">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form15">
-                <td>Enter 12th English teacher's(internal) marks out of 20</td>
-                <td>
-                    <input type="number" name="t15">
-                </td>
-            </form>
-        </tr>
-        <tr>
-            <form name="form16">
-                <td>Enter 12th Marathi/IT teacher's(internal) marks out of 20</td>
-                <td>
-                    <input type="number" name="t16">
-                </td>
-            </form>
-        </tr>
-    </table>
-    <input type="submit" value="submit" onclick="show()"> 
-    <input type="reset">
+      </table>
     </form>
+  </body>
+</html>
