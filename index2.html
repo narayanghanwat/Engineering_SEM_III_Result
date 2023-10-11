@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SGPA Calculator SEM III</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+    <script language="javascript">
+      var egp = 0;
+      var sgpa = 0.00;
+      function check(x) {
+        var grd = " ";
+        if (x > 85) grd = "A+";
+        else if (x > 75) grd = "A";
+        else if (x > 67) grd = "B+";
+        else if (x > 60) grd = "B";
+        else if (x > 50) grd = "C+";
+        else if (x >= 40) grd = "C";
+        else grd = "fail";
+        return grd;
+      }
+      function grdpt(x)
+      {
+        if (x == "A+")return 1;
+        else if (x == "A")return 2;
+        else if (x == "B+")return 3;
+        else if (x == "B")return 4;
+        else if (x == "C+")return 5;
+        else if (x == "C")return 6;
+      }
+      function calculate(x,cp)
+      {
+       var t = grdpt(check(x))-1;
+       cp = cp-t*cp/10;
+       egp += cp;
+      }
+      function show() {
+        var name = f1.t1.value;
+        var roll = f1.r1.value;
+        var v = f1.t2.value;
+        var p1 = calculate(v,20);
+        var m3 = f1.t3.value;
+        var p2 =calculate(m3,40);
+        var ds = f1.t4.value;
+        var p3 =calculate(ds,40);
+        var coa = f1.t5.value;
+        var p4 =calculate(coa,30);
+        var dsa = f1.t6.value;
+        var p5 =calculate(dsa,30);
+        var dsl = f1.t7.value;
+        var p6 =calculate(dsl,10);
+        var dsal = f1.t8.value;
+        dsal = (dsal * 100) / 150;
+        var p7 =calculate(dsal,20);
+        var ind = f1.t9.value;
+        ind = ind * 2;
+        var p8 =calculate(ind,10);
+        if (
+          v >= 40 &&
+          m3 >= 40 &&
+          ds >= 40 &&
+          coa >= 40 &&
+          dsa >= 40 &&
+          dsl >= 40 &&
+          dsal >= 40 &&
+          ind >= 40
+        ) {
+          alert("Congratulations! you are passed");
+        } else {
+          alert("you are failed !! Better Luck Next Time");
+        }
+        sgpa = egp/20;
+        document.write(
+          "<h1>SGPA Calculator by Narayan Ghanwat</h1><table border=2 bgcolor=cyan><tr><th bgcolor=cyan><h1>Name    </h1> </th> <th><h1>Roll Number</h1></th><th><h1>Average SGPA</h1></th><th><h1>Expected SGP</h1></th></tr><tr><td>" +
+            name +
+            "</td><td>" +
+            roll +
+            "</td><td>" +
+            sgpa +
+            "</td><td>" +
+            egp +
+            "</td></table><h1>Result details</h1><table border=7 bgcolor=cyan><tr><th bgcolor=cyan><h1>Subjects </h1> </th> <th><h1>Grades</h1></th></tr><tr><td>Values and Ethics</td><td>" +
+            check(v) +
+            "</td><tr><td>Mathematics III</td><td>" +
+            check(m3) +
+            "</td><tr><td>Digital Systems</td><td>" +
+            check(ds) +
+            "</td><tr><td>COA</td><td>" +
+            check(coa) +
+            "</td><tr><td>DSA</td><td>" +
+            check(dsa) +
+            "</td><tr><td>Digital Systems Lab</td><td>" +
+            check(dsl) +
+            "</td><tr><td>DSA LAB</td><td>" +
+            check(dsal) +
+            "</td><tr><td>Industrial Training</td><td>" +
+            check(ind) +
+            "</td></tr></table>"
+        );
+      }
+    </script>
+  </head>
+  <body bgcolor="cyan">
+    <h1>SGPA Calculator SEM III</h1>
+    <form name="f1">
+      <table>
+        <tr>
+          <td>Enter Your Name</td>
+          <td>
+            <input type="Text" name="t1" placeholder="Enter Your Name here" required/>
+          </td>
+          <td>Roll Number</td>
+          <td>
+            <input type="Text" name="r1" placeholder="Enter  Roll Number" required/>
+          </td>
+        </tr>
+        <tr>
+          <td>Course Code</td>
+          <td>Course Title</td>
+          <td>Obtained Marks</td>
+          <td>Total Marks</td>
+        </tr>
+        <tr>
+          <td>IT2301</td>
+          <td>Values And Ethics</td>
+          <td><input type="number" name="t2" required/></td>
+          <td>Total marks 100</td>
+        </tr>
+        <tr>
+          <td>IT2302</td>
+          <td>Mathematics III</td>
+          <td><input type="number" name="t3" required/></td>
+
+          <td>Total marks 100</td>
+        </tr>
+        <tr>
+          <td>IT2303</td>
+          <td>Digital Systems</td>
+          <td><input type="number" name="t4" required /></td>
+          <td>Total marks 100</td>
+        </tr>
+        <tr>
+          <td>IT2304</td>
+          <td>CAO</td>
+          <td><input type="number" name="t5" required/></td>
+          <td>Total marks 100</td>
+        </tr>
+        <tr>
+          <td>IT2305</td>
+          <td>DSA</td>
+          <td><input type="number" name="t6" required/></td>
+          <td>Total marks 100</td>
+        </tr>
+        <tr>
+          <td>IT2306</td>
+          <td>Digital Systems Lab</td>
+          <td><input type="number" name="t7" required/></td>
+          <td>Total marks 100</td>
+        </tr>
+        <tr>
+          <td>IT2307</td>
+          <td>DSA Lab</td>
+          <td><input type="number" name="t8" required/></td>
+          <td>Total marks 150</td>
+        </tr>
+        <tr>
+          <td>IT2308</td>
+          <td>Industrial Training</td>
+          <td><input type="number" name="t9" required/></td>
+          <td>Total marks 50</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="submit" onclick="show()" />
+            <input type="reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

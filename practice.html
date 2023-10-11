@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript</title>
+  </head>
+  <body>
+    <script>
+      function check(x) {
+        var grd;
+        if (x > 85) {
+          grd = "A+";
+        } else if(x > 75) grd = "A";
+        else if(x > 67) grd = "B+";
+        else if(x > 60) grd = "B";
+        else if(x > 50) grd = "C+";
+        else if(x > 40) grd = "C";
+        document.write("grade is " + grd);
+        return grd;
+      }
+    </script>
+    <p>Hello world</p>
+    <input type="submit" onclick="check(80)" />
+  </body>
+</html>
